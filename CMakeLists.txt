@@ -431,7 +431,7 @@ else ()
   list(APPEND BASE_SRCS "src/base/ftsystem.c")
 endif ()
 
-if (WIN32)
+if (WIN32 AND NOT CLANG)
   enable_language(RC)
   list(APPEND BASE_SRCS builds/windows/ftdebug.c
                         src/base/ftver.rc)
